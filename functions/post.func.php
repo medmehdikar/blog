@@ -30,7 +30,7 @@ function comment($name, $email, $comment){
 
     global $db; 
 
-    //tableau initialisé 
+    //tableau initialisé $c
     $c = array(
         'name'      => $name,
         'email'     => $email,
@@ -43,6 +43,8 @@ function comment($name, $email, $comment){
     $req = $db->prepare($sql);
     $req->execute($c); 
 }
+
+//Aficher les commentaires
 
 function get_comment(){
 

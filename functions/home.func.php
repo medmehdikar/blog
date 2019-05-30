@@ -21,7 +21,7 @@
             LIMIT 0,2 
         ");
     
-        $results = array();
+        $results = [];
     
         while($rows = $req->fetchObject()){
             $results[] = $rows;
