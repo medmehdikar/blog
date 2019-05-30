@@ -71,12 +71,19 @@ if($post == false){
         <?php
 
             $responses = get_comment();
-            foreach($responses as $response){
-                ?>
-
-                    <blockquote></blockquote>
-
-                <?php
+            if($responses != false){
+                foreach($responses as $response){
+                    ?>
+    
+                        <blockquote>
+                            <strong><?= $response->name ?> le <?= date('d/m/Y', strtotime($response->date)) ?></strong>
+                            <p><?= nl2br($response->comment)?></p>
+                        </blockquote>
+    
+                    <?php
+                }
+            }else{
+                echo 'Aucun commentaire publié - Soyez le premier';
             }
 
         ?>
